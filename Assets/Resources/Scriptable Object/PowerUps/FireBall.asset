@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401e6df6468d255428a03088ecbfdf54, type: 3}
+  m_Name: FireBall
+  m_EditorClassIdentifier: 
+  rarity: 0
+  id: PowerUp_001
+  powerUpName: Fire ball
+  description: 
+  glyph: {fileID: 0}
+  powerUp: {fileID: 9175434582258780359, guid: 9e1d2c79fa03eb845a55201cfa5065e3, type: 3}
+  fireBallUpgrades:
+  - damage: 100
+    ballsAmount: 1
+  - damage: 120
+    ballsAmount: 1
+  - damage: 120
+    ballsAmount: 2
+  - damage: 150
+    ballsAmount: 2
+  - damage: 175
+    ballsAmount: 2
+  - damage: 175
+    ballsAmount: 3

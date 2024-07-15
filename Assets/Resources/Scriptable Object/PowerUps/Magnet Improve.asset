@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c625691fc7bf942b75f59fb390e34f, type: 3}
+  m_Name: Magnet Improve
+  m_EditorClassIdentifier: 
+  rarity: 0
+  id: PowerUp_005
+  powerUpName: Improve Obs Magnet
+  description: Increase obs collect radius to <color=#00ff00>200%</color>
+  maxLv: 9
+  glyph: {fileID: 0}
+  powerUp: {fileID: 3584041187698760414, guid: 2d0b6c7d516846c4e8f412ffec73ebb2, type: 3}
+  magneticUpgrades:
+  - radius: 20
+  - radius: 40
+  - radius: 60
+  - radius: 80
+  - radius: 100
+  - radius: 120
+  - radius: 140
+  - radius: 160
+  - radius: 180
+  - radius: 200

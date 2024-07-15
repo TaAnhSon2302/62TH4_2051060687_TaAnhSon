@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d93a7f8666eb2438e15361cb488a71, type: 3}
+  m_Name: Wave 1_4
+  m_EditorClassIdentifier: 
+  waveDuration: 50
+  listSpawn:
+  - weight: 1
+    enemyCells: {fileID: 87143013507893159, guid: adf87a40760cb0547babb1b99da8c3ff, type: 3}
+  - weight: 1
+    enemyCells: {fileID: -3129199665608748248, guid: aed24096dbedc9f489c5eea13a00ceac, type: 3}
+  - weight: 1
+    enemyCells: {fileID: -224524233728151985, guid: fcbd04ea3bff16548a349aa51e9cddf6, type: 3}
