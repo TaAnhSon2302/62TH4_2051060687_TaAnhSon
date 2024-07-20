@@ -8,11 +8,11 @@ public class LayoutManager : Singleton<LayoutManager>
     public GunItem gunItem1;
     public GunItem gunItem2;
     public CharcaterItem mutationItem;
-    [SerializeField] private UserSetEquipmentInfor userSetEquipmentInfor = new();
+    //[SerializeField] private UserSetEquipmentInfor userSetEquipmentInfor = new();
     [SerializeField] public UserGunInformation equipmentSlot1 = new();
     [SerializeField] public UserGunInformation equipmentSlot2 = new();
-    private string equipmentSet = "735d1359-08f5-4e98-baa1-406a2120373f1";
-    private string mutationId = "735d1359-08f5-4e98-baa1-406a2120373fHEM_JAGUAR";
+    private UserSetEquipmentInfor equipmentSet = DataManager.Instance.UserData.usersetEquipmentInfor[0];
+    private string mutationId ;
     public string gunEquipId1;
     public string gunEquipId2;
 
@@ -23,15 +23,29 @@ public class LayoutManager : Singleton<LayoutManager>
     }
     public void Init()
     {
-        userSetEquipmentInfor = DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipmentSet);
-        equipmentSlot1 = DataManager.Instance.UserData.userGunInformation.Find(x => x.ownerShipId == userSetEquipmentInfor.gunOwnershipId1);
-        equipmentSlot2 = DataManager.Instance.UserData.userGunInformation.Find(x => x.ownerShipId == userSetEquipmentInfor.gunOwnershipId2);
-        var mutation = DataManager.Instance.UserData.UserMutationInfor.Find(x => x.ownerShipId == userSetEquipmentInfor.mutationOwnershipId);
-        gunItem1.InitIcon(equipmentSlot1);
-        gunItem2.InitIcon(equipmentSlot2);
+        mutationId = equipmentSet.mutationOwnershipId;
+        equipmentSlot1 = DataManager.Instance.UserData.userGunInformation.Find(x => x.ownerShipId == equipmentSet.gunOwnershipId1);
+        equipmentSlot2 = DataManager.Instance.UserData.userGunInformation.Find(x => x.ownerShipId == equipmentSet.gunOwnershipId2);
+        var mutation = DataManager.Instance.UserData.UserMutationInfor.Find(x => x.ownerShipId == equipmentSet.mutationOwnershipId);
+        gunItem1.InitEquipIcon(equipmentSlot1);
+        gunItem2.InitEquipIcon(equipmentSlot2);
+        if (equipmentSlot1 != null)
+        {
+            gunEquipId1 = equipmentSlot1.ownerShipId;
+        }
+        else
+        {
+            gunEquipId1 = null;
+        }
+        if (equipmentSlot2 != null)
+        {
+            gunEquipId2 = equipmentSlot2.ownerShipId;
+        }
+        else
+        {
+            gunEquipId2 = null;
+        }
         mutationItem.InitCharIcon(mutation);
-        gunEquipId1 = equipmentSlot1.ownerShipId;
-        gunEquipId2 = equipmentSlot2.ownerShipId;
         EquipmentManager.Instance.gunOwnedId = "";
     }
 
@@ -43,11 +57,11 @@ public class LayoutManager : Singleton<LayoutManager>
         }
         NetworkManager.Instance.StartCoroutine(
             NetworkManager.Instance.CreateWebPostRequest(
-                NetworkManager.UpdateEquipmentSet(equipmentSet,mutationId, EquipmentManager.Instance.gunOwnedId,gunEquipId2),
+                NetworkManager.UpdateEquipmentSet(equipmentSet.userEquipmentId,mutationId, EquipmentManager.Instance.gunOwnedId,gunEquipId2),
                 (string data) =>
                 {
                     JSONObject jsonData = new JSONObject(data);
-                    DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipmentSet).gunOwnershipId1 = EquipmentManager.Instance.gunOwnedId;
+                    DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipmentSet.userEquipmentId).gunOwnershipId1 = EquipmentManager.Instance.gunOwnedId;
                     Init();
                 }));
     }
@@ -59,11 +73,11 @@ public class LayoutManager : Singleton<LayoutManager>
         }
         NetworkManager.Instance.StartCoroutine(
             NetworkManager.Instance.CreateWebPostRequest(
-                NetworkManager.UpdateEquipmentSet(equipmentSet, mutationId, gunEquipId1, EquipmentManager.Instance.gunOwnedId),
+                NetworkManager.UpdateEquipmentSet(equipmentSet.userEquipmentId, mutationId, gunEquipId1, EquipmentManager.Instance.gunOwnedId),
                 (string data) =>
                 {
                     JSONObject jsonData = new JSONObject(data);
-                    DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipmentSet).gunOwnershipId2 = EquipmentManager.Instance.gunOwnedId;
+                    DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipmentSet.userEquipmentId).gunOwnershipId2 = EquipmentManager.Instance.gunOwnedId;
                     Init();
                 }));
     }

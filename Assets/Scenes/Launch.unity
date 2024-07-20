@@ -1640,7 +1640,6 @@ MonoBehaviour:
     listIngameLevelConfig: []
     listGun: []
   listMutation: []
-  listAbility: []
   listGun: []
 --- !u!1 &762424731
 GameObject:

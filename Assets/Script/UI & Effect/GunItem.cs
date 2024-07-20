@@ -29,6 +29,11 @@ public class GunItem : MonoBehaviour
     }
     public void InitEquipIcon(UserGunInformation cellgun)
     {
+        if (cellgun == null)
+        {
+            icon.sprite = gun.GetSprite("questionMark");
+            return;
+        }
         Sprite sprite = gun.GetSprite(cellgun.gunId);
         gunId = cellgun.gunId;
         gunOwenredId = cellgun.ownerShipId;

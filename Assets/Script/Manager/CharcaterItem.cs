@@ -22,7 +22,13 @@ public class CharcaterItem : MonoBehaviour
     }    
     public void InitCharIcon(UserMutaitonInfor _data)
     {
+        if (_data == null)
+        {
+            icon.sprite = mutation.GetSprite("questionMark");
+            return;
+        }
         Sprite sprite = mutation.GetSprite(_data.mutationId);   
+
         icon.sprite = sprite;
         mutationId = _data.mutationId;
     }
