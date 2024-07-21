@@ -11,11 +11,11 @@ public class LayoutManager : Singleton<LayoutManager>
     //[SerializeField] private UserSetEquipmentInfor userSetEquipmentInfor = new();
     [SerializeField] public UserGunInformation equipmentSlot1 = new();
     [SerializeField] public UserGunInformation equipmentSlot2 = new();
-    private UserSetEquipmentInfor equipmentSet = DataManager.Instance.UserData.usersetEquipmentInfor[0];
+    private UserSetEquipmentInfor equipmentSet = DataManager.Instance.UserData.userSetEquipmentDefault;
     private string mutationId ;
     public string gunEquipId1;
     public string gunEquipId2;
-
+    public int currentSet = 0;
 
     private void Start()
     {
@@ -80,5 +80,30 @@ public class LayoutManager : Singleton<LayoutManager>
                     DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipmentSet.userEquipmentId).gunOwnershipId2 = EquipmentManager.Instance.gunOwnedId;
                     Init();
                 }));
+    }
+    public void OnClickPreviousSet()
+    {
+        if(currentSet == 0)
+        {
+            return;
+        }
+        currentSet--;
+        equipmentSet = DataManager.Instance.UserData.usersetEquipmentInfor[currentSet];
+        Init();
+    }
+    public void OnClickNextSet()
+    {
+        if (currentSet == DataManager.Instance.UserData.usersetEquipmentInfor.Count)
+        {
+            return;
+        }
+        currentSet++;
+        equipmentSet = DataManager.Instance.UserData.usersetEquipmentInfor[currentSet];
+        Init();
+    }
+    public void ConfirmUseThisSet()
+    {
+        DataManager.Instance.UserData.userSetEquipmentDefault = equipmentSet;
+        Debug.Log(equipmentSet.userEquipmentId);
     }
 }

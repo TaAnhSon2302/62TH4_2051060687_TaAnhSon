@@ -10,7 +10,6 @@ public class DataManager : Singleton<DataManager>
     public DataManagerOOP Data = new();
     public List<Mutation> listMutation;
     public List<CellGun> listGun;
-
     private void Start()
     {
         NetworkManager.Instance.GetAbilityDataFromServer();

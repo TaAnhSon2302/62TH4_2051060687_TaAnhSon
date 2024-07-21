@@ -12,6 +12,7 @@ public class UserDataOOP
     public List<UserGunInformation> userGunInformation = new();
     public List<UserSetEquipmentInfor> usersetEquipmentInfor = new();
     public List<UserMutaitonInfor> UserMutationInfor = new();
+    public UserSetEquipmentInfor userSetEquipmentDefault = new();
 }
 [Serializable]
 public class UserLogin{

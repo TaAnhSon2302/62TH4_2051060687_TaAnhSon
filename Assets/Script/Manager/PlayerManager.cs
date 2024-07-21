@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] public GameObject slot2;
     public CellGun cellgun1;
     public CellGun cellgun2;
-    private UserSetEquipmentInfor equipmentSet = DataManager.Instance.UserData.usersetEquipmentInfor[0];
+    private UserSetEquipmentInfor equipmentSet = DataManager.Instance.UserData.userSetEquipmentDefault;
     [SerializeField] public UserGunInformation equipmentSlot1 = new();
     [SerializeField] public UserGunInformation equipmentSlot2 = new();
     [SerializeField] private MutationJaguar mutaiton;
