@@ -34,7 +34,7 @@ public class ToxinSplash : MonoBehaviour
             if (timer >= damageInterval)
             {
                 cell.TakeDamage(damage, 0);
-                cell.SetStatusMachine(PrimaryElement.Toxin, 3, 1);
+                cell.SetStatusMachine(PrimaryElement.Toxin, damage, 1);
                 timer = 0f;
             }
         }
