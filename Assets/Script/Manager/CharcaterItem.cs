@@ -12,13 +12,17 @@ public class CharcaterItem : MonoBehaviour
     [SerializeField] private string enemyId;
 
     [SerializeField] private SpriteAtlas mutation;
-    [SerializeField] private string mutationId;
+    [SerializeField] public string mutationId;
+    [SerializeField] public string mutationOwnedId="";
+    [SerializeField] public Image selecteBorder;
     public void InitIcon(EnemyCellOOP _data)
     {
         Sprite sprite = enemy.GetSprite(_data.enemyId);
         enemyId = _data.enemyId;
         icon.sprite = sprite;
         var button = GetComponent<Button>();
+        button.onClick.AddListener(OnClick);
+        selecteBorder.enabled = false;
     }    
     public void InitCharIcon(UserMutaitonInfor _data)
     {
@@ -31,9 +35,19 @@ public class CharcaterItem : MonoBehaviour
 
         icon.sprite = sprite;
         mutationId = _data.mutationId;
+        mutationOwnedId = _data.ownerShipId;
+        var button = GetComponent<Button>();
+        button.onClick.AddListener(OnClickMutation);
+        selecteBorder.enabled = false;
     }
     public void OnClick()
     {
         ColletionManager.Instance.OnClickShowInfor(enemyId);
+    }
+    public void OnClickMutation()
+    {
+        EquipmentManager.Instance.mutationOwnedId = mutationOwnedId;
+        EquipmentManager.Instance.OnClickMutaitonSelected(mutationOwnedId);
+        Debug.LogFormat(mutationOwnedId);
     }
 }

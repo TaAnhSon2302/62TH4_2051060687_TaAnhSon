@@ -47,6 +47,7 @@ public class LayoutManager : Singleton<LayoutManager>
         }
         mutationItem.InitCharIcon(mutation);
         EquipmentManager.Instance.gunOwnedId = "";
+        EquipmentManager.Instance.mutationOwnedId = "";
     }
 
     public void OnClickChangeEquipmentSlot1()
@@ -80,6 +81,22 @@ public class LayoutManager : Singleton<LayoutManager>
                     DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipmentSet.userEquipmentId).gunOwnershipId2 = EquipmentManager.Instance.gunOwnedId;
                     Init();
                 }));
+    }
+    public void OnClickChangeMutaion()
+    {
+        if(EquipmentManager.Instance.mutationOwnedId == " ")
+        {
+            return;
+        }
+        NetworkManager.Instance.StartCoroutine(
+           NetworkManager.Instance.CreateWebPostRequest(
+               NetworkManager.UpdateEquipmentSet(equipmentSet.userEquipmentId, EquipmentManager.Instance.mutationOwnedId,gunEquipId1,gunEquipId2),
+               (string data) =>
+               {
+                   JSONObject jsonData = new JSONObject(data);
+                   DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipmentSet.userEquipmentId).mutationOwnershipId = EquipmentManager.Instance.mutationOwnedId;
+                   Init();
+               }));
     }
     public void OnClickPreviousSet()
     {

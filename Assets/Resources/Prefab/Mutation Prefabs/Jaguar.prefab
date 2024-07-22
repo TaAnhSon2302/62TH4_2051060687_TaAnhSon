@@ -251,7 +251,7 @@ MonoBehaviour:
   currentPrimaryElement: 0
   currentSecondaryElement: 0
   playerRigidbody2d: {fileID: 8608562803421528327}
-  mutationId: 
+  mutationId: HEM_JAGUAR
   mutationName: 
   stateMachine: {fileID: 0}
   mutationAbilities: []

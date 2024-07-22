@@ -22,6 +22,7 @@ public class EquipmentManager : Singleton<EquipmentManager>
     [SerializeField] private TextMeshProUGUI critMultiple;
     [SerializeField] private TextMeshProUGUI bulletName;
     [SerializeField] public string gunOwnedId;
+    [SerializeField] public string mutationOwnedId;
 
     
     private void Start()
@@ -33,7 +34,6 @@ public class EquipmentManager : Singleton<EquipmentManager>
             gunSprite.InitIcon(userGunInformations[i]);
             //Debug.Log(userGunInformation[i].gunId);
             gunItems.Add(gunSprite);
-            var button = gunSprite.GetComponent<Button>();
         }
         InitCharItem();
     }
@@ -68,6 +68,21 @@ public class EquipmentManager : Singleton<EquipmentManager>
             else
             {
                 gunItems[i].selectedBorder.enabled = false;
+            }
+        }
+    }
+    public void OnClickMutaitonSelected(string id)
+    {
+        var OwnedId = userMutaitonInformation.Find(x => x.ownerShipId ==id);
+        for (int i = 0; i<charcaterItems.Count; i++)
+        {
+           if(charcaterItems[i].mutationOwnedId == OwnedId.ownerShipId)
+            {
+                charcaterItems[i].selecteBorder.enabled = true;
+            }
+            else
+            {
+                charcaterItems[i].selecteBorder.enabled = false;
             }
         }
     }

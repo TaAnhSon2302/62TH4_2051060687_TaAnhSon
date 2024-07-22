@@ -44,9 +44,9 @@ public class GameManager : Singleton<GameManager>
     {
         // spawn player's mutation here
         Debug.Log(DataManager.Instance.listMutation.Count);
-        mutation = LeanPool.Spawn(DataManager.Instance.listMutation[0]);
-        //var mutationSelected = DataManager.Instance.UserData.UserMutationInfor.Find(x => x.ownerShipId == DataManager.Instance.UserData.userSetEquipmentDefault.mutationOwnershipId);
-        //mutation = LeanPool.Spawn(DataManager.Instance.listMutation.Find(x => x.mutationId == mutationSelected.mutationId));
+        //mutation = LeanPool.Spawn(DataManager.Instance.listMutation[0]);
+        var mutationSelected = DataManager.Instance.UserData.UserMutationInfor.Find(x => x.ownerShipId == DataManager.Instance.UserData.userSetEquipmentDefault.mutationOwnershipId);
+        mutation = LeanPool.Spawn(DataManager.Instance.listMutation.Find(x => x.mutationId == mutationSelected.mutationId));
         EnemySpawner.Instance.playerPosition = mutation.transform;
         virtualCamera.Follow = mutation.transform;
         AudioManager.Instance.StartNormalBattleHematos();

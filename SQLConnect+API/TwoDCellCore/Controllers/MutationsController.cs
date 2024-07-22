@@ -28,7 +28,6 @@ namespace TwoDCellCore.Controllers
             List<Mutation> ListTestTable1 =  _context.Mutations
                                             .Include(m => m.MutationAbilities)
                                             .ToList();
-
             List<MutationAbility> listAbilities;
             foreach (var item in ListTestTable1)
             {

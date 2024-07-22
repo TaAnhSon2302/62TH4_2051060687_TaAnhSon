@@ -5,7 +5,6 @@ using Lean.Pool;
 
 public class PlayerManager : MonoBehaviour
 {
-    public PlayerManager instance;
     [SerializeField] public GameObject slot1;
     [SerializeField] public GameObject slot2;
     public CellGun cellgun1;
@@ -13,7 +12,6 @@ public class PlayerManager : MonoBehaviour
     private UserSetEquipmentInfor equipmentSet;
     [SerializeField] public UserGunInformation equipmentSlot1 = new();
     [SerializeField] public UserGunInformation equipmentSlot2 = new();
-    [SerializeField] private MutationJaguar mutaiton;
     public StateMachine gameStateMachine;
     void Start()
     {
@@ -34,9 +32,6 @@ public class PlayerManager : MonoBehaviour
             checkIsfirtgun2.isFirstGun = false;
         }
         else { return; }
-     
-       
-        mutaiton = GetComponent<MutationJaguar>();
     }
 
     // Update is called once per frame
