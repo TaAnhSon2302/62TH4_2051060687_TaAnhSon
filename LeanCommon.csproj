@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{817B812C-97B9-2AFE-10F2-5F6456946AA8}</ProjectGuid>
+    <ProjectGuid>{94248189-18A8-BC92-9453-286AB9372799}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>LeanCommon</AssemblyName>
@@ -973,7 +973,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="CW.Common.csproj">
-      <Project>{5C5E00C0-F69E-7F82-D3A7-8DA38BF22B8C}</Project>
+      <Project>{9EAB53CB-0929-4936-79FB-D78EF448BDC0}</Project>
       <Name>CW.Common</Name>
     </ProjectReference>
   </ItemGroup>

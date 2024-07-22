@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{185A53BE-3A47-AFC4-9351-E8DB21D09391}</ProjectGuid>
+    <ProjectGuid>{08F37437-B4CB-078D-9C88-3652B3DFED7E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.PlayerPrefsEditor.Samples.SampleScene</AssemblyName>

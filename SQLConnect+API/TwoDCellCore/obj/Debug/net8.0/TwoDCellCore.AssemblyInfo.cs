@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TwoDCellCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0cf2b399057d160c0bf4bdc8246021ba103d93a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bca5b8de03f7f9ced4f491328d344f3fc3c558bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("TwoDCellCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TwoDCellCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

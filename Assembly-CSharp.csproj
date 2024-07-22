@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4D467BB5-269D-9C27-FB97-47444C19D722}</ProjectGuid>
+    <ProjectGuid>{D09196DD-4E9D-2CD9-B871-B1F296BA4AAF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -1492,27 +1492,27 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.PlayerPrefsEditor.Editor.csproj">
-      <Project>{AD9419C6-0225-8F43-E0E1-47034765F5E5}</Project>
+      <Project>{6C609C35-FB50-0760-E9C3-6F01B878342F}</Project>
       <Name>Unity.PlayerPrefsEditor.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="LeanCommon.csproj">
-      <Project>{817B812C-97B9-2AFE-10F2-5F6456946AA8}</Project>
+      <Project>{94248189-18A8-BC92-9453-286AB9372799}</Project>
       <Name>LeanCommon</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.PlayerPrefsEditor.Samples.SampleScene.csproj">
-      <Project>{185A53BE-3A47-AFC4-9351-E8DB21D09391}</Project>
+      <Project>{08F37437-B4CB-078D-9C88-3652B3DFED7E}</Project>
       <Name>Unity.PlayerPrefsEditor.Samples.SampleScene</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.PlayerPrefsEditor.EditorResources.csproj">
-      <Project>{99737F48-04A2-09C0-418E-04B9F93B314A}</Project>
+      <Project>{BE220AB1-E595-1160-BC8B-E16DF6F32B03}</Project>
       <Name>Unity.PlayerPrefsEditor.EditorResources</Name>
     </ProjectReference>
     <ProjectReference Include="CW.Common.csproj">
-      <Project>{5C5E00C0-F69E-7F82-D3A7-8DA38BF22B8C}</Project>
+      <Project>{9EAB53CB-0929-4936-79FB-D78EF448BDC0}</Project>
       <Name>CW.Common</Name>
     </ProjectReference>
     <ProjectReference Include="LeanPool.csproj">
-      <Project>{D6503704-366A-0A67-DB37-F530D96409A9}</Project>
+      <Project>{A5CF2B2E-66F2-D6FF-A3E5-B8656B27D1E7}</Project>
       <Name>LeanPool</Name>
     </ProjectReference>
   </ItemGroup>
