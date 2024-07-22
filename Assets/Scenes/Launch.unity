@@ -1632,6 +1632,12 @@ MonoBehaviour:
     userGunInformation: []
     usersetEquipmentInfor: []
     UserMutationInfor: []
+    userSetEquipmentDefault:
+      userEquipmentId: 
+      userId: 
+      mutationOwnershipId: 
+      gunOwnershipId1: 
+      gunOwnershipId2: 
   Data:
     listMutations: []
     listEnemies: []

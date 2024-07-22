@@ -273,16 +273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336c51596954a7f41ac085d866b346cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
   slot1: {fileID: 9180433794249448901}
   slot2: {fileID: 7088182596945475071}
   cellgun1: {fileID: 0}
   cellgun2: {fileID: 0}
-  userSetEquipmentInfor:
-    userEquipmentId: 
-    userId: 
-    mutationOwnershipId: 
-    gunOwnershipId1: 
-    gunOwnershipId2: 
   equipmentSlot1:
     ownerShipId: 
     userId: 

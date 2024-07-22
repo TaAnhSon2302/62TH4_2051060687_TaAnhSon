@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenuManager : MonoBehaviour
 {
     private void Start() {
-         DataManager.Instance.UserData.userSetEquipmentDefault = DataManager.Instance.UserData.usersetEquipmentInfor[0];
+         //DataManager.Instance.UserData.userSetEquipmentDefault = DataManager.Instance.UserData.usersetEquipmentInfor[0];
         if(SceneLoadManager.Instance.lastScene == SceneName.Equipment.ToString()||SceneLoadManager.Instance.lastScene == SceneName.Collection.ToString()){
 
         }

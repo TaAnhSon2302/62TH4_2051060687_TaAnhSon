@@ -18,7 +18,7 @@ public class CharcaterItem : MonoBehaviour
         Sprite sprite = enemy.GetSprite(_data.enemyId);
         enemyId = _data.enemyId;
         icon.sprite = sprite;
-       
+        var button = GetComponent<Button>();
     }    
     public void InitCharIcon(UserMutaitonInfor _data)
     {

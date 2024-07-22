@@ -9,7 +9,7 @@ using System.Linq;
 public class Mutation : CellsBase
 {
     [SerializeField] public Rigidbody2D playerRigidbody2d;
-    [SerializeField] protected string mutationId;
+    [SerializeField] public string mutationId;
     [SerializeField] protected string mutationName;
     [SerializeField] protected StateMachine stateMachine;
     [SerializeField] protected List<CellAbility> mutationAbilities;

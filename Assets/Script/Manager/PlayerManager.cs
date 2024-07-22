@@ -5,17 +5,19 @@ using Lean.Pool;
 
 public class PlayerManager : MonoBehaviour
 {
+    public PlayerManager instance;
     [SerializeField] public GameObject slot1;
     [SerializeField] public GameObject slot2;
     public CellGun cellgun1;
     public CellGun cellgun2;
-    private UserSetEquipmentInfor equipmentSet = DataManager.Instance.UserData.userSetEquipmentDefault;
+    private UserSetEquipmentInfor equipmentSet;
     [SerializeField] public UserGunInformation equipmentSlot1 = new();
     [SerializeField] public UserGunInformation equipmentSlot2 = new();
     [SerializeField] private MutationJaguar mutaiton;
     public StateMachine gameStateMachine;
     void Start()
     {
+        equipmentSet = DataManager.Instance.UserData.userSetEquipmentDefault;
         equipmentSlot1 = DataManager.Instance.UserData.userGunInformation.Find(x => x.ownerShipId == equipmentSet.gunOwnershipId1);
         equipmentSlot2 = DataManager.Instance.UserData.userGunInformation.Find(x => x.ownerShipId == equipmentSet.gunOwnershipId2);
         if(equipmentSlot1 != null)

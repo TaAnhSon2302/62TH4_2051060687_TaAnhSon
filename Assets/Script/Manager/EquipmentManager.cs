@@ -7,9 +7,13 @@ using UnityEngine.UI;
 public class EquipmentManager : Singleton<EquipmentManager>
 {
     public GunItem gunItem;
+    public CharcaterItem charcaterItem;
     [SerializeField] private Transform itemHolder;
+    [SerializeField] private Transform charItemHolder;
     [SerializeField] private List<GunItem> gunItems = new();
+    [SerializeField] private List<CharcaterItem> charcaterItems = new();    
     [SerializeField] private List<UserGunInformation> userGunInformations = new();
+    [SerializeField] private List<UserMutaitonInfor> userMutaitonInformation = new();
     public string bulletId;
     [SerializeField] private TextMeshProUGUI gunName;
     [SerializeField] private TextMeshProUGUI fireRate;
@@ -30,6 +34,17 @@ public class EquipmentManager : Singleton<EquipmentManager>
             //Debug.Log(userGunInformation[i].gunId);
             gunItems.Add(gunSprite);
             var button = gunSprite.GetComponent<Button>();
+        }
+        InitCharItem();
+    }
+    public void InitCharItem()
+    {
+        userMutaitonInformation = DataManager.Instance.UserData.UserMutationInfor;
+        for(int i = 0; i < userMutaitonInformation.Count; i++)
+        {
+            var charSprite = Instantiate(charcaterItem, charItemHolder);
+            charSprite.InitCharIcon(userMutaitonInformation[i]);
+            charcaterItems.Add(charSprite);
         }
     }
     public void OnClickShowInfor(string id)

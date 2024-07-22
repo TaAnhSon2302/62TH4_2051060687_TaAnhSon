@@ -79,6 +79,9 @@ public partial class NetworkManager : Singleton<NetworkManager>
         StartCoroutine(CreateWebGetRequest(HOST + GET_USER_EQUIPED_GUN + userId , (string data) =>
         {
             DataManager.Instance.GetUserEquipedGunInfor(data);
+            Debug.Log(DataManager.Instance.UserData.usersetEquipmentInfor.Count);
+            DataManager.Instance.UserData.userSetEquipmentDefault = DataManager.Instance.UserData.usersetEquipmentInfor[0];
+        
         }));
     }
     public void GetUserMutattionFromServer(string userId)

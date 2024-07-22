@@ -138,7 +138,7 @@ MonoBehaviour:
   enemy: {fileID: 100100200, guid: d9a553069476fc24aaf33f2db9f2abd8, type: 3}
   chooseButton: {fileID: 1067470753820752929}
   enemyId: 
-  mutation: {fileID: 0}
+  mutation: {fileID: 100100200, guid: f7b61d710adc6734081af4cdad3045db, type: 3}
   mutationId: 
 --- !u!114 &1067470753820752929
 MonoBehaviour:

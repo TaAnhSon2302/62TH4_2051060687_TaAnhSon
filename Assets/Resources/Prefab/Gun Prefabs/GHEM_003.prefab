@@ -139,5 +139,5 @@ MonoBehaviour:
   isAutoFire: 0
   gunId: GHEM_003
   gunName: 
-  pelletCount: 5
-  spreadAngle: 45
+  pelletCount: 4
+  spreadAngle: 40
