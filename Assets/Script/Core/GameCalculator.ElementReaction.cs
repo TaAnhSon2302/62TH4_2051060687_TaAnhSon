@@ -14,7 +14,10 @@ public partial class GameCalculator : MonoBehaviour
                     break;
                     case PrimaryElement.Toxin:
                         resultStatus = new StatusStateHellBurn(currentStatus.enemyCell,currentStatus.damagePerTick,currentStatus.stack);
-                    break;
+                        break;
+                    case PrimaryElement.Ice:
+                        resultStatus = new StatusStateBlast(currentStatus.enemyCell, currentStatus.damagePerTick, currentStatus.stack);
+                        break;
                 }
             break;
             case PrimaryElement.Ice:

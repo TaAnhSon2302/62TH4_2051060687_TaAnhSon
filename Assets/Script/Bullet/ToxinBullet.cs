@@ -5,8 +5,8 @@ using Lean.Pool;
 public class ToxinBullet : Bullet
 {
     //public static ToxinBullet instance;
-    [SerializeField] protected int toxinDamage;
-    [SerializeField] public float radius;
+    [SerializeField] public int toxinDamage = 40;
+    [SerializeField] public float radius = 25;
     [SerializeField] private ToxinSplash toxinSplash;
 
     public int GetToxinDamage()
@@ -26,6 +26,7 @@ public class ToxinBullet : Bullet
     {
         base.Awake();
         //toxinSplash = Resources.Load<ToxinSplash>("Prefab/Bullet Prefabs/ToxinArea");
+
     }
     protected override void OnCollisionEnter2D(Collision2D collision)
     {

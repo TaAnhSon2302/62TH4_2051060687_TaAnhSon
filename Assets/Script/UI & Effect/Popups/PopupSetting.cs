@@ -12,8 +12,8 @@ public class PopupSetting : Popups
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private List<Button> button;
-    [SerializeField] private CustomButton yesButton;
-    [SerializeField] private CustomButton noButton;
+    [SerializeField] private Image yesButton;
+    [SerializeField] private Image noButton;
    
     private float _musicVolume;
     private float _soundVolume;
@@ -72,6 +72,7 @@ public class PopupSetting : Popups
         EazySoundManager.GlobalSoundsVolume = value;
         AudioManager.Instance.playerVolumeSetting.sfxVolume = EazySoundManager.GlobalSoundsVolume;
     }
+  
     public void OnUIColorChange(int id)
     {
         switch (id)
@@ -79,18 +80,29 @@ public class PopupSetting : Popups
             case 1:
                 UserUIManager.Instance.ChangeUIColor(GameStatic.CRITICAL_TIER_5_COLOR);
                 Frame.color = UserUIManager.Instance.currentUIColor;
+                yesButton.color = UserUIManager.Instance.currentUIColor;
+                noButton.color = UserUIManager.Instance.currentUIColor;
                 break;
             case 2:
                 UserUIManager.Instance.ChangeUIColor(GameStatic.USER_UI_COLOR_BLUE);
                 Frame.color = UserUIManager.Instance.currentUIColor;
+                yesButton.color = UserUIManager.Instance.currentUIColor;
+                noButton.color = UserUIManager.Instance.currentUIColor;
+                PopupSetting.Show();
                 break;
             case 3:
                 UserUIManager.Instance.ChangeUIColor(GameStatic.USER_UI_COLOR_CYAN);
                 Frame.color = UserUIManager.Instance.currentUIColor;
+                yesButton.color = UserUIManager.Instance.currentUIColor;
+                noButton.color = UserUIManager.Instance.currentUIColor;
+                PopupSetting.Show();
                 break;
             case 4:
                 UserUIManager.Instance.ChangeUIColor(GameStatic.USER_UI_COLOR_PURPLE);
                 Frame.color = UserUIManager.Instance.currentUIColor;
+                yesButton.color = UserUIManager.Instance.currentUIColor;
+                noButton.color = UserUIManager.Instance.currentUIColor;
+                PopupSetting.Show();
                 break;
         }
     }

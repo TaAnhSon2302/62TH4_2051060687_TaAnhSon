@@ -8519,19 +8519,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\mayti\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\62TH4_2051060687_TaAnhSon\\SQLConnect+API\\TwoDCellCore\\TwoDCellCore.csproj",
+      "projectUniqueName": "C:\\Users\\mayti\\Desktop\\62TH4_2051060687_TaAnhSon\\SQLConnect+API\\TwoDCellCore\\TwoDCellCore.csproj",
       "projectName": "TwoDCellCore",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\62TH4_2051060687_TaAnhSon\\SQLConnect+API\\TwoDCellCore\\TwoDCellCore.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\62TH4_2051060687_TaAnhSon\\SQLConnect+API\\TwoDCellCore\\obj\\",
+      "projectPath": "C:\\Users\\mayti\\Desktop\\62TH4_2051060687_TaAnhSon\\SQLConnect+API\\TwoDCellCore\\TwoDCellCore.csproj",
+      "packagesPath": "C:\\Users\\mayti\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mayti\\Desktop\\62TH4_2051060687_TaAnhSon\\SQLConnect+API\\TwoDCellCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mayti\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

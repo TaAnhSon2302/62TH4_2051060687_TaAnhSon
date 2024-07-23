@@ -134,13 +134,13 @@ public partial class NetworkManager : Singleton<NetworkManager>
     //}
     public static APIRequest UpdateEquipmentSet(string equipSetId, string mutationId, string gun1 = null , string gun2  =null)
     {
-        APIRequest apiRequest = new();
+        APIRequest apiRequest = new APIRequest();
         apiRequest.url = HOST + "/api/UserEquipment/UpdateUserEquipment";
-        var currentSet = DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipSetId);
+       // var currentSet = DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipSetId);
         var data = new
         {
-            userEquipmentId = currentSet.userEquipmentId,
-            mutationOwnershipId = currentSet.mutationOwnershipId,
+            userEquipmentId = equipSetId,
+            mutationOwnershipId = mutationId,
             gunOwnershipId1 = gun1,
             gunOwnershipId2 = gun2,
         };

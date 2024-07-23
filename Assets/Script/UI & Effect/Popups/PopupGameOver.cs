@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.SocialPlatforms;
 
 public class PopupGameOver : Popups
 {
@@ -15,8 +16,11 @@ public class PopupGameOver : Popups
 
     public void OnGoBackButtonClicked()
     {
-        SceneLoadManager.Instance.LoadScene(SceneName.MainMenu, true);
+        GameManager.Instance.isPause = false;
+        Time.timeScale = 1;
         Hide();
+        SceneLoadManager.Instance.LoadScene(SceneName.MainMenu, true);
+       
     }
 
    

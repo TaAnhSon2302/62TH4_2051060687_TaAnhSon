@@ -11,5 +11,8 @@ public class GameStateLose : GameState{
     }
     public override void LogicUpdate(){
         base.LogicUpdate();
+        Time.timeScale = timeScale;
+        InputManager.Instance.isOnPauseState = true;
+        Debug.Log("game loose");
     }
 }

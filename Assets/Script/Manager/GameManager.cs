@@ -23,6 +23,7 @@ public class GameManager : Singleton<GameManager>
     public bool isChoosingPowerUp = false;
     public Transform bulletHolder;
     public Action<string> returnPowerIdUpChosen;
+    public bool isCheckedDead = false;
     [Space(10)]
     [Header("Game UI")]
     public MutationHealthBar healthBar;
@@ -39,6 +40,17 @@ public class GameManager : Singleton<GameManager>
     {
         Init();
         gameStateMachine.ChangeState(new GameStatePlay());
+    }
+    public void Update()
+    {
+        if(isCheckedDead == true)
+        {
+            return;
+        }
+        if(mutation.healPoint <= 0)
+        {
+            CheckIsDead();
+        }
     }
     private void Init()
     {
@@ -102,12 +114,11 @@ public class GameManager : Singleton<GameManager>
     }
     public void CheckIsDead()
     {
-        if (mutation.healPoint <= 0)
-        {
+            isCheckedDead = true;
             gameStateMachine.ChangeState(new GameStateLose());
-            Destroy(mutation.gameObject);
-            PopupGameOver.Show();
-        }
+            var collider = mutation.GetComponent<CircleCollider2D>();
+            collider.enabled = false;
+            PopupGameOver.Show();  
     }
     public IEnumerator IEWaitForChoosingPowerUp(){
         returnPowerIdUpChosen += AddPowerUpToMutation;
