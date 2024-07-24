@@ -6,6 +6,7 @@ using Unity.Mathematics;
 using System.Linq;
 using System;
 using System.Threading;
+using UnityEngine.Rendering.UI;
 
 public class EnemySpawner : Singleton<EnemySpawner>
 {
@@ -25,6 +26,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
     private Transform spawnPos;
     private int totalWeight = 0;
     private bool isOnChangeWave = false;
+    private bool isLastWave;
+    private bool endGame = false;
 
     private int enemiesSpawned = 0;
     private void Start()
@@ -38,7 +41,10 @@ public class EnemySpawner : Singleton<EnemySpawner>
         enemiesSpawned = UpdateManager.Instance.enemiesCount;
         // UpdateWave();
         waveDurationLeft -= Time.fixedDeltaTime;
-
+        if (!endGame)
+        {
+            endGame = (isLastWave && waveDurationLeft <= 0);
+        }
     }
 
     private void Initialize()
@@ -71,6 +77,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
                 totalWeight = 0;
                 counterDict.Add(new Dictionary<EnemyCell, int>());
                 waveDurationLeft = campaignLevel.waves[currentWave].waveDuration;
+                isLastWave = campaignLevel.waves[currentWave].isLastWave;
                 enemiesCounter = new int[campaignLevel.waves[currentWave].listSpawn.Count][];
                 for (int i = 0; i < campaignLevel.waves[currentWave].listSpawn.Count; i++)
                 {
@@ -88,11 +95,9 @@ public class EnemySpawner : Singleton<EnemySpawner>
             }
             isOnChangeWave = false;
         }
-        
     }
     private void SpawnEnemies()
     {
-        //StartCoroutine(IESpawnSchedule());
         StartCoroutine(IESpawnByLevelScript());
     }
     public Vector3 SetTargetCyclePos(float spawnRadius, Vector3 playerPos)
@@ -105,23 +110,12 @@ public class EnemySpawner : Singleton<EnemySpawner>
         Vector3 position = new Vector3(spawnX, spawnY, 0);
         return position;
     }
-    private IEnumerator IESpawnSchedule()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(spawnTime);
-            if (enemiesSpawned < GameManager.Instance.maximumEnemies - 1)
-                LeanPool.Spawn(listEnemyCell[0], SetTargetCyclePos(spawnRadius, playerPosition.position), quaternion.identity, enemyHoder);
-            yield return new WaitForSeconds(spawnTime);
-            if (enemiesSpawned < GameManager.Instance.maximumEnemies - 1)
-                LeanPool.Spawn(listEnemyCell[1], SetTargetCyclePos(spawnRadius, playerPosition.position), quaternion.identity, enemyHoder);
-        }
-    }
     private IEnumerator IESpawnByLevelScript()
     {
         EnemyCell enemyCell;
-        while (true)
+        while (!endGame)
         {
+
             UpdateWave();
             if (isOnChangeWave) yield return new WaitForFixedUpdate();
             //Debug.Log("spawning");
@@ -151,6 +145,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
                 }
             }
         }
+        GameManager.Instance.CheckIsWin();
     }
     public void OnEnemyDestroy(EnemyCell enemyCell)
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using UnityEngine;
 
 public class LayoutManager : Singleton<LayoutManager>
@@ -43,7 +44,7 @@ public class LayoutManager : Singleton<LayoutManager>
         }
         else
         {
-            gunEquipId2 = null;
+            gunEquipId2 = null ;
         }
         mutationItem.InitCharIcon(mutation);
         EquipmentManager.Instance.gunOwnedId = "";
@@ -97,6 +98,19 @@ public class LayoutManager : Singleton<LayoutManager>
                    DataManager.Instance.UserData.usersetEquipmentInfor.Find(x => x.userEquipmentId == equipmentSet.userEquipmentId).mutationOwnershipId = EquipmentManager.Instance.mutationOwnedId;
                    Init();
                }));
+    }
+    public void OnCickAddNewSet()
+    {
+        NetworkManager.Instance.StartCoroutine(
+            NetworkManager.Instance.CreateWebPostRequest(
+                NetworkManager.AddNewEquipmentSet(DataManager.Instance.UserData.userInformation.userID),
+                (string data) =>
+                {
+                    JSONObject jSONObject = new JSONObject(data);
+                    NetworkManager.Instance.GetUserEquipedGunFromServer(DataManager.Instance.UserData.userInformation.userID);
+                    equipmentSet = DataManager.Instance.UserData.usersetEquipmentInfor.Last();
+                    Init();  
+                }));
     }
     public void OnClickPreviousSet()
     {

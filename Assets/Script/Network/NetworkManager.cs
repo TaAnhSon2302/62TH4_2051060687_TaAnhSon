@@ -79,7 +79,7 @@ public partial class NetworkManager : Singleton<NetworkManager>
         StartCoroutine(CreateWebGetRequest(HOST + GET_USER_EQUIPED_GUN + userId , (string data) =>
         {
             DataManager.Instance.GetUserEquipedGunInfor(data);
-            Debug.Log(DataManager.Instance.UserData.usersetEquipmentInfor.Count);
+            //Debug.Log(DataManager.Instance.UserData.usersetEquipmentInfor.Count);
             DataManager.Instance.UserData.userSetEquipmentDefault = DataManager.Instance.UserData.usersetEquipmentInfor[0];
         
         }));
@@ -145,6 +145,17 @@ public partial class NetworkManager : Singleton<NetworkManager>
             gunOwnershipId2 = gun2,
         };
         apiRequest.body = JsonConvert.SerializeObject(data);
+        return apiRequest;
+    }
+    public static APIRequest AddNewEquipmentSet(string userId)
+    {
+        APIRequest apiRequest = new APIRequest();
+        apiRequest.url = HOST + GameStatic.ADD_USER_EQUIPSET;
+        var data = new
+        {
+            userId = userId,
+        };
+        apiRequest.body= JsonConvert.SerializeObject(data);
         return apiRequest;
     }
     #endregion

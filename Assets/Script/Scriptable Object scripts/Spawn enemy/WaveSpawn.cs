@@ -7,4 +7,5 @@ public class WaveSpawn : ScriptableObject
 {
     public int waveDuration = 60;
     public List<WaveSpawnRatio> listSpawn = new();
+    public bool isLastWave = false;
 }
