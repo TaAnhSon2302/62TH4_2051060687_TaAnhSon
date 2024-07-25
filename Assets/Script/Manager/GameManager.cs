@@ -120,11 +120,13 @@ public class GameManager : Singleton<GameManager>
             collider.enabled = false;
             PopupGameOver.Show();  
     }
-    public void CheckIsWin()
+    public void GameWin()
     {
+        isCheckedDead = true;
+        gameStateMachine.ChangeState(new GameStateLose());
         var collider = mutation.GetComponent<CircleCollider2D>();
         collider.enabled = false;
-        PopupGameOver.Show();
+        PopupGameWin.Show();
     }
     public IEnumerator IEWaitForChoosingPowerUp(){
         returnPowerIdUpChosen += AddPowerUpToMutation;

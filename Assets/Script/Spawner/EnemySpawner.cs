@@ -10,7 +10,7 @@ using UnityEngine.Rendering.UI;
 
 public class EnemySpawner : Singleton<EnemySpawner>
 {
-    [SerializeField] private float spawnTime = 1f;
+    [SerializeField] private float spawnTime = 3f;
     [SerializeField] private Transform enemyHoder;
     // [SerializeField] private float respawnDistance = 20f;
     [SerializeField] private List<EnemyCell> listEnemyCell;
@@ -145,7 +145,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
                 }
             }
         }
-        GameManager.Instance.CheckIsWin();
+        GameManager.Instance.GameWin();
     }
     public void OnEnemyDestroy(EnemyCell enemyCell)
     {

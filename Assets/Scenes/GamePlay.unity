@@ -2806,9 +2806,8 @@ MonoBehaviour:
   listPlayerPowerUpDatas: []
   listPlayerPowerUps: []
   isChoosingPowerUp: 0
-  cellGun1: {fileID: 0}
-  cellGun2: {fileID: 0}
   bulletHolder: {fileID: 1503430073}
+  isCheckedDead: 0
   healthBar: {fileID: 1340581832}
   xpBar: {fileID: 5909203}
   currentLvText: {fileID: 832860926}
@@ -5576,6 +5575,7 @@ MonoBehaviour:
   model: {fileID: 0}
   meleeController: {fileID: 0}
   meleeRangeRenderer: {fileID: 0}
+  rangeController: {fileID: 0}
   wave: 0
   dotStatus: 0
 --- !u!212 &3964060582159839873

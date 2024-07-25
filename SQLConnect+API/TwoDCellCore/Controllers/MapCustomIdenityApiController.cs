@@ -395,9 +395,15 @@ public static class IdentityApiEndpointRouteBuilderExtensions
                 {
                     var userMutation = new UserMutation
                     {
-                        OwnershipId = newUser.Id,
+                        OwnershipId = newUser.Id + "HEM_JAGAUR"+"0",
                         UserId = newUser.Id,
                         MutationId = "HEM_JAGUAR",
+                    };
+                    var userMutation2  = new UserMutation
+                    {
+                        OwnershipId = newUser.Id + "HEM_QUOVEX" +"0",
+                        UserId = newUser.Id,
+                        MutationId = "HEM_QUOVEX",
                     };
                     var userEquipment = new UserEquipment
                     {
@@ -405,8 +411,16 @@ public static class IdentityApiEndpointRouteBuilderExtensions
                         UserId = newUser.Id,
                         MutationOwnershipId = userMutation.OwnershipId,
                     };
+                    var userEquipment2 = new UserEquipment
+                    {
+                        UserEquipmentId = newUser.Id + "1",
+                        UserId = newUser.Id,
+                        MutationOwnershipId = userMutation2.OwnershipId,
+                    };
                     dbContext.UserEquipment.Add(userEquipment);
                     dbContext.UserMutations.Add(userMutation);
+                    dbContext.UserEquipment.Add(userEquipment2);
+                    dbContext.UserMutations.Add(userMutation2);
                     await dbContext.SaveChangesAsync();
                 }
             }
@@ -421,18 +435,33 @@ public static class IdentityApiEndpointRouteBuilderExtensions
                 {
                     var userGun = new UserGun
                     {
-                        OwnershipId = newUser.Id + "GHEM_001",
+                        OwnershipId = newUser.Id + "GHEM_001"+"0",
                         UserId = newUser.Id,
                         GunId = "GHEM_001",
                     };
                     var userGun2 = new UserGun
                     {
-                        OwnershipId = newUser.Id + "GHEM_002",
+                        OwnershipId = newUser.Id + "GHEM_002"+"0",
                         UserId = newUser.Id,
                         GunId = "GHEM_002",
                     };
+                    var userGun3 = new UserGun
+                    {
+                        OwnershipId = newUser.Id + "GHEM_003"+"0",
+                        UserId = newUser.Id,
+                        GunId = "GHEM_003",
+                    };
+                    var userGun4 = new UserGun
+                    {
+                        OwnershipId = newUser.Id + "GHEM_004"+"0",
+                        UserId = newUser.Id,
+                        GunId = "GHEM_004",
+                    };
+
                     dbContext.UserGuns.Add(userGun);
                     dbContext.UserGuns.Add(userGun2);
+                    dbContext.UserGuns.Add(userGun3);
+                    dbContext.UserGuns.Add(userGun4);
                     await dbContext.SaveChangesAsync();
                 }
             }

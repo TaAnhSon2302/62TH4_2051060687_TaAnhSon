@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d93a7f8666eb2438e15361cb488a71, type: 3}
   m_Name: Wave 1_1
   m_EditorClassIdentifier: 
-  waveDuration: 10
+  waveDuration: 30
   listSpawn:
   - weight: 1
-    enemyCells: {fileID: 141957854181248740, guid: 9e19324de4dfeb345996ffaed907388f, type: 3}
+    enemyCells: {fileID: -224524233728151985, guid: fcbd04ea3bff16548a349aa51e9cddf6, type: 3}
+  - weight: 3
+    enemyCells: {fileID: -3129199665608748248, guid: aed24096dbedc9f489c5eea13a00ceac, type: 3}
   isLastWave: 0

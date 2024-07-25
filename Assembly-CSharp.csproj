@@ -180,6 +180,7 @@
     <Compile Include="Assets\Script\State Machine\Status State\StatusStateShattering.cs" />
     <Compile Include="Assets\Script\PlayerCells\Mutation.cs" />
     <Compile Include="Assets\Script\State Machine\Player State\PlayerStateIdle.cs" />
+    <Compile Include="Assets\Script\UI &amp; Effect\Popups\PopupGameWin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Script\Core\GameCalculator.cs" />
