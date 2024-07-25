@@ -50,7 +50,17 @@ public class ColletionManager : Singleton<ColletionManager>
         shield.text = $"Shield: {enemy.cellProtection.shieldType}";
         shieldPoint.text = $"Shield Point: {enemy.cellProtection.shieldPoint}";
         equipment.text = $"Equipment: {enemy.equipment}";
-
+        for (int i = 0; i < charcaterItems.Count; i++)
+        {
+            if (charcaterItems[i].enemyId == enemy.enemyId)
+            {
+                charcaterItems[i].selecteBorder.enabled = true;
+            }
+            else
+            {
+                charcaterItems[i].selecteBorder.enabled = false;
+            }
+        }
     }
     public void OnClickBackToMenu()
     {

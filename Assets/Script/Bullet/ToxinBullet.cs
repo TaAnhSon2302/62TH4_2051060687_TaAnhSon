@@ -26,7 +26,8 @@ public class ToxinBullet : Bullet
     {
         base.Awake();
         //toxinSplash = Resources.Load<ToxinSplash>("Prefab/Bullet Prefabs/ToxinArea");
-
+        toxinSplash.damage = toxinDamage;
+        toxinSplash.transform.localScale = new Vector3(radius, radius, 0);
     }
     protected override void OnCollisionEnter2D(Collision2D collision)
     {

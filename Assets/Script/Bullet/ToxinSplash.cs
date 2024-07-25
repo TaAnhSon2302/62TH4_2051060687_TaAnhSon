@@ -5,7 +5,7 @@ using Lean.Pool;
 using JetBrains.Annotations;
 public class ToxinSplash : MonoBehaviour
 {
-    [SerializeField] public int damage;
+    [SerializeField] public int damage = 40;
     [SerializeField] private float damageInterval = 0.5f;
     [SerializeField] private float timer = 0f;
     // [SerializeField] private float despawnTimer = 0f;

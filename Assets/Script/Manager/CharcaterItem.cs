@@ -9,7 +9,7 @@ public class CharcaterItem : MonoBehaviour
     [SerializeField] public Image icon;
     [SerializeField] private SpriteAtlas enemy;
     [SerializeField] Button chooseButton;
-    [SerializeField] private string enemyId;
+    [SerializeField] public string enemyId;
 
     [SerializeField] private SpriteAtlas mutation;
     [SerializeField] public string mutationId;

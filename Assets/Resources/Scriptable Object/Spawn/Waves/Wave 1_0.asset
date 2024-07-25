@@ -18,6 +18,6 @@ MonoBehaviour:
     enemyCells: {fileID: -3129199665608748248, guid: aed24096dbedc9f489c5eea13a00ceac, type: 3}
   - weight: 4
     enemyCells: {fileID: 87143013507893159, guid: adf87a40760cb0547babb1b99da8c3ff, type: 3}
-  - weight: 2
+  - weight: 4
     enemyCells: {fileID: -3129199665608748248, guid: aed24096dbedc9f489c5eea13a00ceac, type: 3}
   isLastWave: 0

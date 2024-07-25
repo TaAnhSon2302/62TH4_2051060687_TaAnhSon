@@ -1723,7 +1723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: EQUIP SLOT !
+  m_text: EQUIP SLOT 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3b73129b37176e48ac80d64302e64dd, type: 2}
   m_sharedMaterial: {fileID: -5739320739448375612, guid: f3b73129b37176e48ac80d64302e64dd, type: 2}

@@ -32,6 +32,7 @@ public class GunItem : MonoBehaviour
         if (cellgun == null)
         {
             icon.sprite = gun.GetSprite("questionMark");
+            selectedBorder.enabled = false;
             return;
         }
         Sprite sprite = gun.GetSprite(cellgun.gunId);

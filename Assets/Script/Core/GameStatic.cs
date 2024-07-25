@@ -4,7 +4,7 @@ public static class GameStatic
 {
     public static bool IS_ANIMATING = false;
     #region game property
-    public readonly static int ARMOR_COEFFICIENT = 100;
+    public readonly static int ARMOR_COEFFICIENT = 300;
     public readonly static float GUN_MAX_SPREAD_ANGLE = 60;
     public readonly static float STATUS_DURATION = 10f;
     public readonly static float TIME_BETWEEN_STATUS_TICK = 1f;
